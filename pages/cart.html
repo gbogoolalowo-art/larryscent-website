@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Bag | LARRYSCENT</title>
+    <meta name="description" content="Review the fragrances in your LARRYSCENT shopping bag." />
+    <meta name="theme-color" content="#684454" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LARRYSCENT" />
+    <meta property="og:title" content="Your Bag | LARRYSCENT" />
+    <meta property="og:description" content="Review the fragrances in your LARRYSCENT shopping bag." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23684454'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EL%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <script src="../js/layout.js" defer></script>
+    <script src="../js/products.js" defer></script>
+    <script src="../js/cart.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/checkout.js" defer></script>
+  </head>
+  <body data-page="cart" data-root="../">
+    <main id="main">
+      <section class="page-hero">
+        <p class="eyebrow">Your selection</p>
+        <h1>Your shopping bag</h1>
+        <p id="cart-page-count">0 item(s)</p>
+      </section>
+      <section class="section cart-layout">
+        <div id="cart-items"></div>
+        <aside class="summary-card" aria-label="Order summary">
+          <h2>Order summary</h2>
+          <p class="summary-line">
+            <span>Subtotal</span><strong id="cart-total">₦0</strong>
+          </p>
+          <p class="small-note">Delivery fees are not included in the subtotal.</p>
+          <a class="button button-full" href="checkout.html">Continue to checkout</a>
+          <a class="under-link" href="../shop.html">Continue shopping</a>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Fragrances | LARRYSCENT</title>
+    <meta name="description" content="Shop luxury perfumes for him, for her and unisex at LARRYSCENT. Find your signature scent." />
+    <meta name="theme-color" content="#684454" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LARRYSCENT" />
+    <meta property="og:title" content="Shop Fragrances | LARRYSCENT" />
+    <meta property="og:description" content="Shop luxury perfumes for him, for her and unisex at LARRYSCENT. Find your signature scent." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23684454'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EL%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/layout.js" defer></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body data-page="shop" data-root="">
+    <main id="main">
+      <section class="page-hero">
+        <p class="eyebrow">The LARRYSCENT collection</p>
+        <h1>Find your signature scent.</h1>
+        <p>Explore fragrances for every mood and moment.</p>
+      </section>
+      <section class="section shop-section">
+        <div class="shop-toolbar">
+          <p id="result-count" aria-live="polite">Loading fragrances…</p>
+          <div class="filters">
+            <input
+              id="product-search"
+              type="search"
+              placeholder="Search fragrances"
+              aria-label="Search fragrances"
+            />
+            <select id="category-filter" aria-label="Filter by category">
+              <option value="all">All fragrances</option>
+              <option value="men">For him</option>
+              <option value="women">For her</option>
+              <option value="unisex">Unisex</option>
+            </select>
+            <select id="sort-products" aria-label="Sort products">
+              <option value="featured">Featured</option>
+              <option value="low-high">Price: low to high</option>
+              <option value="high-low">Price: high to low</option>
+              <option value="name">Name</option>
+            </select>
+          </div>
+        </div>
+        <div class="product-grid" id="shop-product-grid"></div>
+        <p id="no-products" class="empty-note" hidden>
+          No fragrances match your search. Clear the search or try another category.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LARRYSCENT | Luxury Perfumes</title>
+    <meta name="description" content="Discover beautiful fragrances at LARRYSCENT. Find a scent that feels like you." />
+    <meta name="theme-color" content="#684454" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LARRYSCENT" />
+    <meta property="og:title" content="LARRYSCENT | Luxury Perfumes" />
+    <meta property="og:description" content="Discover beautiful fragrances at LARRYSCENT. Find a scent that feels like you." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23684454'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EL%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/layout.js" defer></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body data-page="home" data-root="">
+    <main id="main">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">The art of fragrance</p>
+          <h1>Leave a lasting impression.</h1>
+          <p>
+            Discover fragrances that express your personality, elevate your
+            everyday and make every entrance unforgettable.
+          </p>
+          <a class="button" href="shop.html">Explore the collection</a>
+        </div>
+        <div class="hero-image">
+          <img src="images/banners/about.jpg" alt="A woman holding a LARRYSCENT perfume bottle" width="349" height="295" fetchpriority="high" data-fallback="LARRYSCENT PERFUMES" />
+        </div>
+      </section>
+
+      <section class="section intro-section">
+        <p class="eyebrow">Welcome to LARRYSCENT</p>
+        <h2>Find the fragrance that feels like you.</h2>
+        <p>
+          From everyday favourites to statement scents, explore a collection
+          selected to help you express your unique style.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="collections-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Shop your mood</p>
+            <h2 id="collections-title">Explore our collections</h2>
+          </div>
+          <a class="under-link" href="shop.html">View all products</a>
+        </div>
+        <div class="collection-grid">
+          <a class="collection-card" href="shop.html">
+            <span class="frame"><img src="images/collections/luxury.jpg" alt="Luxury perfume collection" width="600" height="700" loading="lazy" data-fallback="Luxury Perfumes" /></span>
+            <span>Luxury perfumes</span>
+          </a>
+          <a class="collection-card" href="shop.html">
+            <span class="frame"><img src="images/collections/testers.jpg" alt="Perfume testers" width="600" height="700" loading="lazy" data-fallback="Testers" /></span>
+            <span>Luxury testers</span>
+          </a>
+          <a class="collection-card" href="shop.html">
+            <span class="frame"><img src="images/collections/gifts.jpg" alt="Perfume gift sets" width="600" height="700" loading="lazy" data-fallback="Gift Sets" /></span>
+            <span>Gift sets</span>
+          </a>
+          <a class="collection-card" href="shop.html">
+            <span class="frame"><img src="images/collections/diffusers.jpg" alt="Home fragrance diffusers" width="600" height="700" loading="lazy" data-fallback="Diffusers" /></span>
+            <span>Diffusers</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section soft-section" aria-labelledby="bestsellers-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Customer favourites</p>
+            <h2 id="bestsellers-title">Best sellers</h2>
+          </div>
+          <a class="under-link" href="shop.html">Shop all</a>
+        </div>
+        <div class="product-grid" id="home-products"></div>
+      </section>
+
+      <section class="promo-banner">
+        <div>
+          <p class="eyebrow">Your next signature scent</p>
+          <h2>Make every day memorable.</h2>
+          <a class="button button-light" href="shop.html">Shop fragrances</a>
+        </div>
+        <img src="images/banners/promo.jpg" alt="Up to 50% off, limited time only" width="303" height="295" loading="lazy" data-fallback="LARRYSCENT" />
+      </section>
+
+      <section class="section brand-note">
+        <h2>Fragrance. Confidence. You.</h2>
+        <p>Thoughtfully selected scents for every mood, moment and memory.</p>
+      </section>
+
+      <section class="newsletter">
+        <p class="eyebrow">Stay in the know</p>
+        <h2>A little luxury in your inbox.</h2>
+        <p>Sign up for collection updates and fragrance inspiration.</p>
+        <form id="newsletter-form">
+          <input
+            type="email"
+            name="email"
+            autocomplete="email"
+            placeholder="Your email address"
+            required
+            aria-label="Email address"
+          />
+          <button class="button" type="submit">Subscribe</button>
+        </form>
+        <p id="newsletter-message" class="form-message" aria-live="polite"></p>
+      </section>
+    </main>
+  </body>
+</html>

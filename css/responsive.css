@@ -1,0 +1,44 @@
+/* LARRYSCENT — responsive rules */
+
+@media (max-width: 1024px) {
+  .collection-grid { grid-template-columns: repeat(2, 1fr); }
+  .cart-layout, .checkout-layout { grid-template-columns: 1fr; }
+  .summary-card { position: static; }
+}
+
+@media (max-width: 860px) {
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .site-header { position: sticky; }
+  .site-nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 0.5rem var(--gutter) 1.25rem;
+    background: var(--pearl); border-bottom: 1px solid var(--line);
+  }
+  .site-nav.open, .site-nav.is-open, .site-nav.active, .site-nav.show { display: flex; }
+  .site-nav a { padding: 0.9rem 0; border-bottom: 1px solid var(--line); background: none; }
+  .site-nav .bag-link { margin-top: 1rem; text-align: center; border: 1px solid var(--aubergine); }
+
+  .hero { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-copy { padding-bottom: 0; }
+  .hero-image { max-width: 460px; width: 100%; margin-inline: auto; }
+  .contact-layout, .about-layout, .product-detail-layout, .promo-banner { grid-template-columns: 1fr; }
+  .about-layout img { max-width: 480px; }
+  .site-footer { grid-template-columns: 1fr 1fr; }
+  .site-footer > div:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  .collection-grid { gap: 1rem; }
+  .collection-card span:not(.frame) { font-size: 1.05rem; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 0.9rem; }
+  .shop-toolbar, .filters { flex-direction: column; align-items: stretch; }
+  .filters input, .filters select { width: 100%; }
+  .newsletter form { flex-direction: column; }
+  .cart-item { grid-template-columns: 72px 1fr; }
+  .cart-item > img { width: 72px; }
+  .cart-item > :last-child { grid-column: 2; justify-self: start; }
+  .product-bottom { flex-direction: column; align-items: stretch; }
+  .product-bottom .button { width: 100%; }
+  .site-footer { grid-template-columns: 1fr; }
+}
