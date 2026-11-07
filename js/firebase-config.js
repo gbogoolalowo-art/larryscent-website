@@ -5,4 +5,4 @@ export const firebaseConfig = {
   authDomain: "larryscent-699bb.firebaseapp.com",
   projectId: "larryscent-699bb",
   appId: "1:107134915991:web:1428f78b307ca9096e20d2"
-};
+}; 
