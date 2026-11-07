@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Admin | LARRYSCENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <script src="../js/products.js" defer></script>
+    <script type="module" src="../js/admin.js"></script>
+  </head>
+  <body class="admin">
+    <section id="login-view" class="login">
+      <form id="login-form" class="login-card">
+        <a class="brand" href="../index.html">LARRYSCENT<span>Admin</span></a>
+        <h1>Sign in</h1>
+        <p id="setup-note" class="notice" hidden>
+          Firebase is not connected yet. Follow SETUP.md, then paste your settings into js/firebase-config.js.
+        </p>
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" autocomplete="username" required />
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" autocomplete="current-password" required />
+        <p id="login-error" class="error" role="alert"></p>
+        <button class="button button-full" type="submit">Sign in</button>
+        <button id="forgot" class="text-button" type="button">Forgot your password?</button>
+      </form>
+    </section>
+
+    <div id="app" hidden>
+      <header class="admin-bar">
+        <a class="brand" href="../index.html">LARRYSCENT<span>Admin</span></a>
+        <div class="admin-user">
+          <span id="user-email"></span>
+          <button id="sign-out" class="button button-small button-ghost" type="button">Sign out</button>
+        </div>
+      </header>
+
+      <main class="admin-main">
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" id="tab-products" aria-selected="true" data-tab="products">Products</button>
+          <button class="tab" role="tab" id="tab-orders" aria-selected="false" data-tab="orders">Orders <span id="new-count" class="count" hidden></span></button>
+        </div>
+
+        <section id="panel-products" role="tabpanel" aria-labelledby="tab-products">
+          <div class="panel-head">
+            <div>
+              <h1>Products</h1>
+              <p id="product-summary" class="muted"></p>
+            </div>
+            <div class="panel-actions">
+              <button id="import-seed" class="button button-ghost button-small" type="button" hidden>Import starter products</button>
+              <button id="add-product" class="button button-small" type="button">Add product</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th></th><th>Product</th><th>Price</th><th>Stock</th><th></th></tr></thead>
+              <tbody id="products-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="panel-orders" role="tabpanel" aria-labelledby="tab-orders" hidden>
+          <div class="panel-head">
+            <div>
+              <h1>Orders</h1>
+              <p id="order-summary" class="muted"></p>
+            </div>
+            <select id="order-filter" aria-label="Filter orders by status">
+              <option value="all">All orders</option>
+              <option value="new">New</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="shipped">Shipped</option>
+              <option value="delivered">Delivered</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div id="orders-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="product-dialog">
+      <form id="product-form" method="dialog">
+        <h2 id="dialog-title">Add product</h2>
+        <div class="field-row">
+          <div>
+            <label for="p-name">Name</label>
+            <input id="p-name" required maxlength="80" />
+          </div>
+          <div>
+            <label for="p-category">Category</label>
+            <select id="p-category" required>
+              <option value="men">For him</option>
+              <option value="women">For her</option>
+              <option value="unisex">Unisex</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row three">
+          <div>
+            <label for="p-size">Size</label>
+            <input id="p-size" required placeholder="100ml" maxlength="20" />
+          </div>
+          <div>
+            <label for="p-price">Price (₦)</label>
+            <input id="p-price" type="number" min="0" step="100" required />
+          </div>
+          <div>
+            <label for="p-stock">Stock</label>
+            <input id="p-stock" type="number" min="0" step="1" required />
+          </div>
+        </div>
+        <label for="p-description">Description</label>
+        <textarea id="p-description" rows="3" required maxlength="400"></textarea>
+        <label for="p-image">Product image</label>
+        <div class="image-field">
+          <img id="p-preview" alt="" hidden />
+          <input id="p-image" type="file" accept="image/*" />
+        </div>
+        <p class="hint">Photos are resized automatically. A portrait photo with the bottle centred looks best.</p>
+        <p id="form-error" class="error" role="alert"></p>
+        <div class="dialog-actions">
+          <button class="button button-ghost" type="button" data-close>Cancel</button>
+          <button class="button" type="submit" id="save-product">Save product</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="confirm-dialog">
+      <form method="dialog">
+        <h2 id="confirm-title">Are you sure?</h2>
+        <p id="confirm-text"></p>
+        <div class="dialog-actions">
+          <button class="button button-ghost" type="button" data-close>Cancel</button>
+          <button class="button button-danger" type="submit" value="ok">Delete</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
